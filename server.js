@@ -2,12 +2,12 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.get('/hello', (req, res)=> {
-    res.json({message: 'HOLA MUNDO'})
+app.get('/saludo', (req, res)=> {
+    res.json({message: 'HOLA DESDE NODEJS'})
 });
 
-app.get('/status', (req, res)=> {
-    res.json({message: 'SERVICE IS RUNNING'})
+app.get('/estado', (req, res)=> {
+    res.json({status: 'SERVICE RUNNING'})
 });
 
 app.listen(PORT, () => {
