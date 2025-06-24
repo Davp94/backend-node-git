@@ -10,6 +10,10 @@ app.get('/estado', (req, res)=> {
     res.json({status: 'SERVICE RUNNING'})
 });
 
+app.get('/hello', (req, res)=> {
+    res.json({message: 'HELLO WORLD'})
+});
+
 app.listen(PORT, () => {
     console.log('Server is running on port', PORT);
 })
