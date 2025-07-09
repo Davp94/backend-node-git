@@ -1,0 +1,29 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    volumes:
+      - /home/david/Documents/projects/blumbit:/controller
+    networks:
+      - postgres-network
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=supermercado_db
+    ports:
+      - "5432"
+    volumes:
+      - postgres-volume:/var/lib/postgresql/data        
+    networks:
+      - postgres-network
+volumes:
+  postgres-volume:
+networks:
+  postgres-network:
